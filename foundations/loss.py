@@ -9,8 +9,7 @@ class Solution:
         # y_pred: predicted probabilities
         # Hint: clip y_pred to [1e-7, 1 - 1e-7] to avoid log(0)
         # return round(your_answer, 4)
-        epsilon = 1e-7
-        y_pred = np.clip(y_pred, epsilon, 1-epsilon)
+        y_pred = np.clip(y_pred, 1e-7, 1-(1e-7))
         return np.round(- np.mean(y_true * np.log(y_pred) + (1 - y_true) * np.log(1 - y_pred)), 4)
         
 
